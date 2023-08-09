@@ -9,7 +9,7 @@ import {
   KeyboardAvoidingView,
   Platform,
   StyleSheet} from "react-native";
-import { useNavigation } from '@react-navigation/native';
+
 
 const RegistrationForm =()=>{
     const [userLogin, setUserLogin] = useState('');
@@ -18,16 +18,16 @@ const RegistrationForm =()=>{
     const [focus, setFocus] = useState(null);
     const [isShowPassword, setIsShowPassword]=useState(true);
 
-    const navigation = useNavigation();
+
 
     const onLogin = () => {
       if (userLogin && userEmail && userPassword){
-        // Alert.alert("Credentials", `${userLogin} ${userEmail} ${userPassword}. Реєстрація пройшла успішно`);
-        // console.log(`Credentials - login: ${userLogin}, email: ${userEmail}, password: ${userPassword}`);
+        Alert.alert("Credentials", `login: ${userLogin}, email: ${userEmail}, password: ${userPassword}. Реєстрація пройшла успішно`);
+        console.log(`Credentials - login: ${userLogin}, email: ${userEmail}, password: ${userPassword}`);
         setUserLogin('');
         setUserEmail('');
         setUserPassword('');
-        navigation.navigate("Home",{screen: 'PostsScreen'});
+
       }
       else {
         Alert.alert("Credentials", `Заповніть всі поля для реєстрації`);
@@ -90,7 +90,7 @@ const ToggleShowPassword = ()=>{
       </TouchableOpacity>
 
       <Text style={styles.loginLinkText}>Вже є акаунт?&nbsp;
-        <Text style={[styles.loginLinkText, styles.loginLink]} onPress={() => navigation.navigate("LoginScreen")}>Увійти</Text>
+        <Text style={[styles.loginLinkText, styles.loginLink]}>Увійти</Text>
       </Text>
           
     </>

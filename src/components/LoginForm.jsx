@@ -8,33 +8,28 @@ import {
   KeyboardAvoidingView,
   Platform,
   StyleSheet} from "react-native";
-import { useNavigation } from '@react-navigation/native';
+
 
 const LoginForm =()=>{
     
     const [userEmail, setUserEmail] = useState('');
     const [userPassword, setUserPassword] = useState('');
-    const [focus, setFocus] = useState(null);
-    const [isShowPassword, setIsShowPassword]=useState(true);
-    
-    const navigation = useNavigation();
+    const [focus, setFocus] = useState(null);  
+
 
     const onLogin = () => {
       if(userEmail && userPassword){
-        // Alert.alert("Credentials", `${userEmail} ${userPassword}`);
-        // console.log(`Credentials - email: ${userEmail}, password: ${userPassword}`);
+        Alert.alert("Credentials", `email: ${userEmail}, password: ${userPassword}`);
+        console.log(`Credentials - email: ${userEmail}, password: ${userPassword}`);
         setUserEmail('');
         setUserPassword('');
-        navigation.navigate("Home",{screen: 'PostsScreen'});
       }
       else{
         Alert.alert("Credentials", `Заповніть всі поля для входу`);
       }
     };
 
-    const ToggleShowPassword = ()=>{
-      setIsShowPassword(!isShowPassword);
-    }
+
     
  return (
 
@@ -65,7 +60,7 @@ const LoginForm =()=>{
         onBlur={()=>setFocus(null)}
         />
       </KeyboardAvoidingView>
-      <TouchableOpacity style={styles.showPasswordButton} onPress={ToggleShowPassword}>
+      <TouchableOpacity style={styles.showPasswordButton}>
         <Text style={styles.showPasswordText}>Показати</Text>
       </TouchableOpacity>
       </View>
@@ -75,7 +70,7 @@ const LoginForm =()=>{
       </TouchableOpacity>
 
       <Text style={styles.loginLinkText}>Немає акаунту?&nbsp;  
-        <Text style={[styles.loginLinkText, styles.loginLink]} onPress={() => navigation.navigate("RegistrationScreen")}>Зареєструватися</Text>
+        <Text style={[styles.loginLinkText, styles.loginLink]}>Зареєструватися</Text>
       </Text>
     
 
