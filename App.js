@@ -18,9 +18,9 @@ export default function App() {
   return (
     
     <>
-    <RegistrationScreen/>
-    {/* <LoginScreen/>
-    <PostsScreen/> */}
+    {/* <RegistrationScreen/> */}
+   <LoginScreen/>
+     {/* <PostsScreen/> */}
     <StatusBar style="auto" />
     </>
     

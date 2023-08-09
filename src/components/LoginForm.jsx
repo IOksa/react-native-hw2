@@ -15,7 +15,7 @@ const LoginForm =()=>{
     const [userEmail, setUserEmail] = useState('');
     const [userPassword, setUserPassword] = useState('');
     const [focus, setFocus] = useState(null);  
-
+    const [isShowPassword, setIsShowPassword]=useState(true);
 
     const onLogin = () => {
       if(userEmail && userPassword){
@@ -29,7 +29,11 @@ const LoginForm =()=>{
       }
     };
 
-
+    const ToggleShowPassword = ()=>{
+      console.log('isShowPassword=',isShowPassword);
+      setIsShowPassword(!isShowPassword);
+      console.log('isShowPassword=',isShowPassword);
+    }
     
  return (
 
@@ -55,12 +59,12 @@ const LoginForm =()=>{
         style={[styles.formInput, styles.formInputLastChild, focus==='password' && styles.activeFormInput]}
         placeholder="Пароль"
         placeholderTextColor='#BDBDBD'
-        secureTextEntry
+        secureTextEntry={isShowPassword}
         onFocus={() => setFocus('password')}
         onBlur={()=>setFocus(null)}
         />
       </KeyboardAvoidingView>
-      <TouchableOpacity style={styles.showPasswordButton}>
+      <TouchableOpacity style={styles.showPasswordButton} onPress={ToggleShowPassword}>
         <Text style={styles.showPasswordText}>Показати</Text>
       </TouchableOpacity>
       </View>
