@@ -30,9 +30,8 @@ const LoginForm =()=>{
     };
 
     const ToggleShowPassword = ()=>{
-      console.log('isShowPassword=',isShowPassword);
       setIsShowPassword(!isShowPassword);
-      console.log('isShowPassword=',isShowPassword);
+     
     }
     
  return (
