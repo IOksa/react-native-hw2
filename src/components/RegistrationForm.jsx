@@ -42,7 +42,12 @@ const ToggleShowPassword = ()=>{
 
 
     <>
-    <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"}>
+    
+    <KeyboardAvoidingView 
+    behavior={Platform.OS == "ios" ? "padding" : "height"} 
+    keyboardVerticalOffset='-30'
+
+    >
      <TextInput
         value={userLogin}
         onChangeText={setUserLogin}
@@ -54,8 +59,6 @@ const ToggleShowPassword = ()=>{
    
         
       />
-      </KeyboardAvoidingView>
-      <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"}>
       <TextInput
         value={userEmail}
         onChangeText={setUserEmail}
@@ -66,9 +69,9 @@ const ToggleShowPassword = ()=>{
         onBlur={()=>setFocus(null)}
         
       />
-      </KeyboardAvoidingView>
+     
       <View style={styles.inputPasswordWrap}>
-      <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"}> 
+     
       <TextInput
         value={userPassword}
         onChangeText={setUserPassword}
@@ -79,11 +82,13 @@ const ToggleShowPassword = ()=>{
         onFocus={() => setFocus('password')}       
         onBlur={()=>setFocus(null)}
         />
-      </KeyboardAvoidingView>
+     
       <TouchableOpacity style={styles.showPasswordButton} onPress={ToggleShowPassword}>
         <Text style={styles.showPasswordText}>Показати</Text>
       </TouchableOpacity>
+      
       </View>
+      </KeyboardAvoidingView>   
 
       <TouchableOpacity style={styles.formButton} onPress={onLogin}>
         <Text style={styles.formButtonText}>Зареєструватися</Text>
@@ -92,7 +97,8 @@ const ToggleShowPassword = ()=>{
       <Text style={styles.loginLinkText}>Вже є акаунт?&nbsp;
         <Text style={[styles.loginLinkText, styles.loginLink]}>Увійти</Text>
       </Text>
-          
+      
+     
     </>
     
     );
@@ -100,6 +106,7 @@ const ToggleShowPassword = ()=>{
 };
 
 const styles = StyleSheet.create({
+    
     formInput: {
       height: 50,
       paddingTop: 16,

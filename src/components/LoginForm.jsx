@@ -38,7 +38,7 @@ const LoginForm =()=>{
 
 
     <>
-      <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"}>
+      <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"} keyboardVerticalOffset='-100'>
       <TextInput
         value={userEmail}
         onChangeText={setUserEmail}
@@ -49,9 +49,9 @@ const LoginForm =()=>{
         onBlur={()=>setFocus(null)}
         
       />
-      </KeyboardAvoidingView>
+     
       <View style={styles.inputPasswordWrap}>
-      <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"}> 
+       
       <TextInput
         value={userPassword}
         onChangeText={setUserPassword}
@@ -62,11 +62,13 @@ const LoginForm =()=>{
         onFocus={() => setFocus('password')}
         onBlur={()=>setFocus(null)}
         />
-      </KeyboardAvoidingView>
+    
       <TouchableOpacity style={styles.showPasswordButton} onPress={ToggleShowPassword}>
         <Text style={styles.showPasswordText}>Показати</Text>
       </TouchableOpacity>
+     
       </View>
+      
 
       <TouchableOpacity style={styles.formButton} onPress={onLogin}>
         <Text style={styles.formButtonText}>Увійти</Text>
@@ -76,7 +78,7 @@ const LoginForm =()=>{
         <Text style={[styles.loginLinkText, styles.loginLink]}>Зареєструватися</Text>
       </Text>
     
-
+      </KeyboardAvoidingView>
     </>
     
     );

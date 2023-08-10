@@ -5,7 +5,7 @@ import CommonTitle from '../components/CommonTitle';
 import RegistrationForm  from "../components/RegistrationForm";
 import UserAvatar from "../components/UserAvatar";
 
-const RegistrationScreen = ({ navigation })=>{
+const RegistrationScreen = ()=>{
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <View style={styles.container}>
