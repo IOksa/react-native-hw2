@@ -6,8 +6,6 @@ import {
   Text,
   View,
   Alert,
-  KeyboardAvoidingView,
-  Platform,
   StyleSheet} from "react-native";
 
 
@@ -43,11 +41,7 @@ const ToggleShowPassword = ()=>{
 
     <>
     
-    <KeyboardAvoidingView 
-    behavior={Platform.OS == "ios" ? "padding" : "height"} 
-    keyboardVerticalOffset='-30'
-
-    >
+   
      <TextInput
         value={userLogin}
         onChangeText={setUserLogin}
@@ -88,7 +82,7 @@ const ToggleShowPassword = ()=>{
       </TouchableOpacity>
       
       </View>
-      </KeyboardAvoidingView>   
+      
 
       <TouchableOpacity style={styles.formButton} onPress={onLogin}>
         <Text style={styles.formButtonText}>Зареєструватися</Text>

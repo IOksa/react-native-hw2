@@ -5,8 +5,6 @@ import {
   Text,
   View,
   Alert,
-  KeyboardAvoidingView,
-  Platform,
   StyleSheet} from "react-native";
 
 
@@ -38,7 +36,7 @@ const LoginForm =()=>{
 
 
     <>
-      <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"} keyboardVerticalOffset='-100'>
+  
       <TextInput
         value={userEmail}
         onChangeText={setUserEmail}
@@ -78,7 +76,7 @@ const LoginForm =()=>{
         <Text style={[styles.loginLinkText, styles.loginLink]}>Зареєструватися</Text>
       </Text>
     
-      </KeyboardAvoidingView>
+     
     </>
     
     );

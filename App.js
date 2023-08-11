@@ -1,9 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { useFonts } from 'expo-font';
 import 'react-native-gesture-handler';
+import {View, StyleSheet} from "react-native";
 import RegistrationScreen from './src/screens/RegistrationScreen';
 import LoginScreen from './src/screens/LoginScreen';
 import PostsScreen from './src/screens/PostsScreen';
+
 
 
 export default function App() {
@@ -18,14 +20,23 @@ export default function App() {
   return (
     
     <>
-    <RegistrationScreen/>
-   {/* <LoginScreen/> */}
-     {/* <PostsScreen/> */}
-    <StatusBar style="auto" />
+    <View style={styles.container}>
+        <RegistrationScreen/>
+      {/* <LoginScreen/> */}
+        {/* <PostsScreen/> */}
+        <StatusBar style="auto" />
+    </View>
     </>
     
   
   );
 }
 
+
+const styles=StyleSheet.create({
+  container:{
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+})
 
